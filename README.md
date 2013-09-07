@@ -8,15 +8,15 @@ setlist_anagram.rb can be used either as a Ruby class or a command line utility.
 
 1. Create an API key on Phish.net and add it to the file `config/phishnet_key`
 
-	echo YOUR_KEY > config/phishnet_key
+        echo YOUR_KEY > config/phishnet_key
 
 2. Install needed gems via Bundler
 
-	bundle
+        bundle
 
 2. Run command and provide a date
 
-	ruby setlist_anagram 8/30/2013
+        ruby setlist_anagram 8/30/2013
 
 ## Notes
 
