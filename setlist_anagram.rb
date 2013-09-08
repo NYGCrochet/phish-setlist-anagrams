@@ -26,7 +26,8 @@ class SetlistAnagram
     titles
       .map{ |t| t.gsub(/\s/, '') }
       .each do |t| 
-        puts t.split('').join(' ')
+        title = opts[:'reverse-letters'] ? t.reverse : t
+        puts title.split('').join(' ')
       end
   end
 
@@ -37,6 +38,12 @@ class SetlistAnagram
 end
 
 if __FILE__ == $0
+  require 'trollop'
+  opts = Trollop::options do
+    opt :reverse, "Display song list in reverse"
+    opt :'reverse-letters', "Display song titles in reverse", {:short => 'l'}
+  end
+
   sa = SetlistAnagram.new ARGV[0]
-  sa.pp_titles
+  sa.pp_titles(opts)
 end
